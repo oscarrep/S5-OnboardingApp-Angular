@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class StepsService {
 
   constructor() { }
+
+  showPhrase(text:string){
+    alert(text)
+  }
 }
