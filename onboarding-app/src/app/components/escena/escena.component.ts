@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StepsService } from '../../services/steps.service';
+
 
 @Component({
   selector: 'app-escena',
@@ -7,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './escena.component.scss'
 })
 export class EscenaComponent {
+
+  constructor(private stepsService: StepsService){}
+
 
 }
