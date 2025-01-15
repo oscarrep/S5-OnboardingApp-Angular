@@ -1,9 +1,14 @@
-<div *ngFor="let step of stepsChild" [style.backgroundColor]="step.bgcolor">
-
-    <h3>{{step.title}}</h3>
-
-    {{step.description}}
-
-    <img src="step.img" alt="{{step.title}}">
-
+<div class="container" *ngFor="let step of stepsChild" [style.backgroundColor]="step.bgColor">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <div class="card p-5 shadow mx-3 my-4" style="border: none;">
+                <div class="card-body">
+                    <img [src]="step.img" alt="{{step.title}}" class="card-img-top"
+                        style="background-color:'{{step.bgColor}}';">
+                    <h3 class="card-title my-4" style="font-size: 20px; font-weight: bold;">{{step.title}}</h3>
+                    <p class="card-text">{{step.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
