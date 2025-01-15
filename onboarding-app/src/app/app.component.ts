@@ -5,7 +5,7 @@ import { IStep } from './interfaces/i-step';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, HomeComponent],
+  imports: [HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

@@ -1,4 +1,9 @@
-<h3>Dedica moltes hores</h3>
+<div *ngFor="let step of stepsChild" [style.backgroundColor]="step.bgcolor">
 
-Un mínim de 30 hores a la setmana. Si no en tens prou, hauràs de dedicar-li 
-més hores. Al principi sembla impossible, però notaràs una millora ràpidament.
+    <h3>{{step.title}}</h3>
+
+    {{step.description}}
+
+    <img src="step.img" alt="{{step.title}}">
+
+</div>
