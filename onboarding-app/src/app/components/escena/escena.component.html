@@ -1,31 +1,32 @@
 <div class="container">
     <div class="row justify-content-center align-items-center">
         <div class="col-4">
-            <div class="carousel slide" id="cardCarouselControls" data-bs-ride="carousel">
+            <div class="carousel slide" id="cardCarouselControls" data-bs-ride="false">
                 <div class="carousel-inner">
-                    <div *ngFor="let step of stepsChild; let i = index"
+                    <div *ngFor="let step of stepsArr; let i = index"
                         [ngClass]="{'carousel-item': true, 'active': i === 0}">
-                        <div class="carousel-item active">
-                            <div class="card shadow mx-3 my-4" style="border: none; height: 60vh;">
-                                <div class="card-body no-padding">
-                                    <div class="img-wrapper rounded-top" [style.background-color]="step.bgColor">
-                                        <img [src]="step.img" class="card-img-top">
-                                    </div>
-                                    <h3 class="card-title my-4 mx-4" style="font-size: 20px; font-weight: bold;">
-                                        {{step.title}}
-                                    </h3>
-                                    <p class="card-text mx-4">{{step.description}}</p>
+                        <!-- for loop, applies following html code for each item in stepsArr-->
+                        <div class="card shadow mx-3 my-4" style="border: none; height: 60vh;">
+                            <div class="card-body no-padding">
+                                <div class="img-wrapper rounded-top" [style.background-color]="step.bgColor">
+                                    <img [src]="step.img" class="card-img-top">
                                 </div>
+                                <h3 class="card-title my-4 mx-4" style="font-size: 20px; font-weight: bold;">
+                                    {{step.title}}
+                                </h3>
+                                <p class="card-text mx-4">{{step.description}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Carousel controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#cardCarouselControls" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#cardCarouselControls"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#cardCarouselControls" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#cardCarouselControls"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>

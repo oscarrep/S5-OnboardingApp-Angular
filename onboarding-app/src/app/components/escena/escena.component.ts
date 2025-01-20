@@ -13,5 +13,5 @@ import { IStep } from '../../interfaces/i-step'
 export class EscenaComponent {
 
   constructor(private stepsService: StepsService) { }
-  @Input() stepsChild: IStep[] = [];
+  @Input() stepsArr: IStep[] = [];
 }
