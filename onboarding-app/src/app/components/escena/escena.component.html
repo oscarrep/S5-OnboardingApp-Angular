@@ -6,7 +6,7 @@
                     <div *ngFor="let step of stepsArr; let currentStep = index"
                         [ngClass]="{'carousel-item': true, 'active': currentStep === 0}">
                         <!-- for loop, applies following html code for each item in stepsArr -->
-                        <div class="card shadow mx-3 my-4" style="border: none; height: 80vh;">
+                        <div class="card shadow mx-3 my-4" style="border: none; height: 70vh;">
                             <div class="card-body no-padding">
                                 <div class="img-wrapper rounded-top" [style.background-color]="step.bgColor">
                                     <img [src]="step.img" class="card-img-top">
@@ -18,7 +18,7 @@
 
                                 <!-- position indicator -->
                                 <div style="position: absolute; display: flex; bottom: 5%; left: 25px; gap: 5px;">
-                                    <button *ngFor="let step of stepsArr; let j=index" [class.active]="currentStep===j"
+                                    <button *ngFor="let step of stepsArr; let j=index" [class.active]="j===currentStep"
                                         class="dots" style="border: none; height: 12px;" type="button">
                                     </button>
                                 </div>

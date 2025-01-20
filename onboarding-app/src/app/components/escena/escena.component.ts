@@ -11,7 +11,7 @@ import { IStep } from '../../interfaces/i-step'
   styleUrl: './escena.component.scss'
 })
 export class EscenaComponent {
-
+  currentStep = 0;
   constructor(private stepsService: StepsService) { }
   @Input() stepsArr: IStep[] = [];
 }
