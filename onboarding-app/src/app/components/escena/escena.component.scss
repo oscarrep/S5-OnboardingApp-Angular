@@ -16,3 +16,23 @@
     height: auto;
     object-fit: contain;
 }
+
+.nButtons .btn {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+}
+
+.dots {
+    width: 8px;
+    height: 8px;
+    background-color: rgb(212, 212, 212);
+    border-radius: 50%;
+}
+
+.dots.active {
+    background-color: black;
+    width: 25px;
+    border-radius: 35%;
+}

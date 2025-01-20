@@ -3,10 +3,10 @@
         <div class="col-4">
             <div class="carousel slide" id="cardCarouselControls" data-bs-ride="false">
                 <div class="carousel-inner">
-                    <div *ngFor="let step of stepsArr; let i = index"
-                        [ngClass]="{'carousel-item': true, 'active': i === 0}">
-                        <!-- for loop, applies following html code for each item in stepsArr-->
-                        <div class="card shadow mx-3 my-4" style="border: none; height: 60vh;">
+                    <div *ngFor="let step of stepsArr; let currentStep = index"
+                        [ngClass]="{'carousel-item': true, 'active': currentStep === 0}">
+                        <!-- for loop, applies following html code for each item in stepsArr -->
+                        <div class="card shadow mx-3 my-4" style="border: none; height: 80vh;">
                             <div class="card-body no-padding">
                                 <div class="img-wrapper rounded-top" [style.background-color]="step.bgColor">
                                     <img [src]="step.img" class="card-img-top">
@@ -15,21 +15,31 @@
                                     {{step.title}}
                                 </h3>
                                 <p class="card-text mx-4">{{step.description}}</p>
+
+                                <!-- position indicator -->
+                                <div style="position: absolute; display: flex; bottom: 5%; left: 25px; gap: 5px;">
+                                    <button *ngFor="let step of stepsArr; let j=index" [class.active]="currentStep===j"
+                                        class="dots" style="border: none; height: 12px;" type="button">
+                                    </button>
+                                </div>
+
+                                <!-- carousel controls -->
+                                <div class="nButtons" style="position: absolute; bottom: 3%; right: 5%;">
+                                    <button *ngIf="currentStep !== 0"
+                                        class="btn btn-white prev-button mx-2 border-black" style="border-radius: 60%;"
+                                        type="button" data-bs-target="#cardCarouselControls" data-bs-slide="prev">
+                                        ←
+                                    </button>
+                                    <button *ngIf="currentStep !== stepsArr.length - 1" class="btn btn-dark next-button"
+                                        style="border-radius: 50%;" type="button" data-bs-target="#cardCarouselControls"
+                                        data-bs-slide="next">
+                                        →
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Carousel controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#cardCarouselControls"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#cardCarouselControls"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
     </div>
