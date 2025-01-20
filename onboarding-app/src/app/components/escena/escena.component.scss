@@ -1,0 +1,18 @@
+.no-padding {
+    padding: 0 !important;
+}
+
+.img-wrapper {
+    padding-top: 20%;
+    padding-bottom: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+}
+
+.img-wrapper img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+}
