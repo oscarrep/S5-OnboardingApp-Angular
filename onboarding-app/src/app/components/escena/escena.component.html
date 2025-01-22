@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row justify-content-center align-items-center">
-        <div class="col-4">
+        <div class="col-lg-6 col-md-10">
             <div class="carousel slide" id="cardCarouselControls" data-bs-ride="false">
                 <div class="carousel-inner">
+                    <!-- for loop, applies following html code for each item in stepsArr -->
                     <div *ngFor="let step of stepsArr; let currentStep = index"
                         [ngClass]="{'carousel-item': true, 'active': currentStep === 0}">
-                        <!-- for loop, applies following html code for each item in stepsArr -->
                         <div class="card shadow mx-3 my-4" style="border: none; height: 70vh;">
                             <div class="card-body no-padding">
                                 <div class="img-wrapper rounded-top" [style.background-color]="step.bgColor">
@@ -19,7 +19,8 @@
                                 <!-- position indicator -->
                                 <div style="position: absolute; display: flex; bottom: 5%; left: 25px; gap: 5px;">
                                     <button *ngFor="let step of stepsArr; let j=index" [class.active]="j===currentStep"
-                                        class="dots" style="border: none; height: 12px;" type="button" (click)="navigate(j)">
+                                        class="dots" style="border: none; height: 12px;" type="button"
+                                        (click)="navigate(j)">
                                     </button>
                                 </div>
 
