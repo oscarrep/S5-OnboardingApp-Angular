@@ -16,6 +16,8 @@
 .card {
     border: none;
     height: 70vh;
+    display: flex;
+    max-width: 90%; 
 }
 
 .card-title {
