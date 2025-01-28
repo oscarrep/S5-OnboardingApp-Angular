@@ -1,50 +1,51 @@
-<div class="container" style="min-width: 100%; min-height: 100vh;">
+<div class="container">
     <div class="row justify-content-center align-items-center slider">
         <div class="col-lg-6 col-md-10">
 
             <!-- for loop, applies following html code for each item in stepsArr -->
-            @for(step of stepsArr; track step.currentStep){
-            <div>
-                <div class="card shadow mx-3 my-4" id="card-{{step.currentStep}}" style="border: none; height: 70vh;">
+
+            <div *ngFor="let step of stepsArr; let i = index">
+                @if(i===currentStep){
+                <div [@slideInOut]="{ value: '', params: { 
+                    enterTransform: isNext ? 'translateX(100%)' : 'translateX(-100%)', 
+                  } }" class="card shadow mx-3 my-4">
                     <div class="card-body no-padding">
                         <div class="img-wrapper rounded-top" [style.background-color]="step.bgColor">
                             <img [src]="step.img" class="card-img-top">
                         </div>
-                        <h3 class="card-title my-4 mx-4" style="font-size: 20px; font-weight: bold;">
+                        <h3 class="card-title my-4 mx-4">
                             {{step.title}}
                         </h3>
                         <p class="card-text mx-4">{{step.description}}</p>
 
                         <!-- position indicator -->
-                        <div style="position: absolute; display: flex; bottom: 5%; left: 25px; gap: 5px;">
-                            <div>
-                                <button [class.active]="step.currentStep===0" class="dots" type="button"> </button>
-                                <button [class.active]="step.currentStep===1" class="dots" type="button"> </button>
-                                <button [class.active]="step.currentStep===2" class="dots" type="button"> </button>
-                            </div>
+                        <div class="indicators">
+                            <button *ngFor="let step of stepsArr; let j=index" [class.active]="j === currentStep"
+                                class="dots" type="button" id='{{j}}' (click)="navigate(j)">
+                            </button>
                         </div>
 
                         <!-- carousel controls -->
-                        <div class="nButtons" style="position: absolute; bottom: 3%; right: 5%;">
-                            @if(step.currentStep !== 0) {
-                            <button class="btn btn-white prev-button mx-2 border-black" style="border-radius: 60%;"
-                                type="button" data-bs-target="#cardCarouselControls" data-bs-slide="prev">
+                        <div class="buttons" [ngClass]="{'one-button':step.id===0||step.id===2}">
+                            @if(step.id !== 0) {
+                            <button class="btn btn-white border-black" [ngClass]="{'mx-5': step.id === 1}"
+                                (click)="prev()" type="button">
                                 ←
                             </button>
                             }
-                            @if(step.currentStep!==2) {
-                            <button class="btn btn-dark next-button" style="border-radius: 50%;" type="button"
-                                data-bs-target="#cardCarouselControls" data-bs-slide="next">
+                            @if(step.id !== 2) {
+                            <button class="btn btn-dark" (click)="next()" type="button">
                                 →
                             </button>
                             }
                         </div>
                     </div>
                 </div>
+                }
             </div>
-            <button id="next">→</button>
-            <button id="prev">←</button>
-            }
+            <button id="next" (click)="next()"> → </button>
+            <button id="prev" (click)="prev()"> ← </button>
+
         </div>
     </div>
 </div>

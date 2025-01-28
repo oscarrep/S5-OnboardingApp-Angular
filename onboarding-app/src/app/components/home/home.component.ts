@@ -5,6 +5,7 @@ import { StepsService } from '../../services/steps.service';
 
 @Component({
   selector: 'app-home',
+  standalone:true,
   imports: [EscenaComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

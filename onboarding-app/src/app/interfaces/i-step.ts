@@ -3,7 +3,7 @@ export interface IStep {
     description: string;
     img: string;
     bgColor: string;
-    currentStep: number;
+    id: number;
 
     element?:HTMLElement;
 }

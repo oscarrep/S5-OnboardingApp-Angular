@@ -1,5 +1,26 @@
+.container {
+    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(116, 165, 255));
+    min-width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .no-padding {
     padding: 0 !important;
+}
+
+.card {
+    border: none;
+    height: 70vh;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .img-wrapper {
@@ -17,11 +38,26 @@
     object-fit: contain;
 }
 
-.nButtons .btn {
+.buttons .btn {
     border-radius: 50%;
     width: 45px;
     height: 45px;
     font-size: 18px;
+    position: absolute;
+    bottom: 3%;
+    right: 5%;
+}
+
+.one-button{
+    justify-content: flex-end;
+}
+
+.indicators {
+    position: absolute;
+    display: flex;
+    bottom: 5%;
+    left: 25px;
+    gap: 5px;
 }
 
 .dots {
@@ -29,23 +65,14 @@
     height: 12px;
     background-color: rgb(212, 212, 212);
     border-radius: 50%;
-    margin-right:5px; border: none; 
+    margin-right: 5px;
+    border: none;
 }
 
 .dots.active {
     background-color: black;
     width: 25px;
     border-radius: 15px;
-}
-
-.container {
-    background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(116, 165, 255));
-    min-height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
 
 .slider {
@@ -55,7 +82,7 @@
 #next,
 #prev {
     position: absolute;
-    top: 40%;
+    top: 50%;
     color: white;
     background-color: transparent;
     border: none;
@@ -63,10 +90,7 @@
     left: 5%;
 }
 
-#next{
+#next {
     left: unset;
     right: 5%;
 }
-
-
-
