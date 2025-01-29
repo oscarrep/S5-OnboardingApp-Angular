@@ -3,7 +3,6 @@
         <div class="col-lg-6 col-md-10">
 
             <!-- for loop, applies following html code for each item in stepsArr -->
-
             <div *ngFor="let step of stepsArr; let i = index">
                 @if(i===currentStep){
                 <div [@slideInOut]="{ value: '', params: { 

@@ -13,7 +13,6 @@ export class StepsService {
       img: 'assets/time_managment.svg',
       bgColor: '#4da2a9',
       id: 0,
-      element:undefined
     },
     {
       title: 'Programa projectes propis:',
@@ -21,7 +20,6 @@ export class StepsService {
       img: 'assets/programming.svg',
       bgColor: '#d3d4d9',
       id: 1,
-      element:undefined
     },
     {
       title: 'Procura descansar:',
@@ -29,7 +27,6 @@ export class StepsService {
       img: 'assets/meditation.svg',
       bgColor: '#ffd167',
       id: 2,
-      element:undefined
     },
   ]
 

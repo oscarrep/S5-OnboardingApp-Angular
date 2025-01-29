@@ -4,6 +4,4 @@ export interface IStep {
     img: string;
     bgColor: string;
     id: number;
-
-    element?:HTMLElement;
 }
