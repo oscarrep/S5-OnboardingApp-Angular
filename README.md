@@ -57,7 +57,12 @@ This project involves creating a digital onboarding application using **Angular 
 
 ---
 
-## Getting Started
+## Try the app
+You can open the app from this link: 
+```bash
+https://s5-onboarding-app-angular.vercel.app
+```
+Or by following these steps:
 
 1. Clone the repository:
    ```bash
